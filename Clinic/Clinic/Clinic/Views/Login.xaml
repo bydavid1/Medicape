@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clinic.Views.Login"
+             xmlns:local = "clr-namespace:Clinic"
+             BackgroundImage="back.png">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="20" >
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="0, 20, 0, 0">
+                <Label Text="Doctor" FontSize="70" TextColor="white" FontFamily="{StaticResource Niconne}"/>
+            </StackLayout>
+                <Frame CornerRadius="5" BackgroundColor="White" Margin="0, 40, 0, 0">
+            <StackLayout Padding="10,20,10,20">
+            <local:CustomEntry TextColor="#00cbc5"
+                        PlaceholderColor="#00cbc5"
+                        Placeholder="Usuario" 
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="user"/>
+            <local:CustomEntry TextColor="#00cbc5"
+                        PlaceholderColor="#00cbc5"
+                        Placeholder="Contraseña" 
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Margin="0,10,0,0"
+                        x:Name="password"/>
+
+                    <Label Text="Rellene todos los campos" x:Name="message" TextColor="Red" HorizontalOptions="Center" IsVisible="False"/>
+                </StackLayout>
+            </Frame>
+
+            <Button 
+                 HorizontalOptions="FillAndExpand"
+                 Text="Iniciar"
+                 TextColor="#00cbc5"
+                 Margin="0, 30, 0, 0"
+                 BackgroundColor="#fff"
+                 HeightRequest="45"
+                 BorderRadius="15"
+                 Clicked="Button_Clicked"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

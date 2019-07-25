@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+             x:Class="Medicape.Views.VerifyPatient">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Frame Padding="0" BackgroundColor="#cce7d2">
+                <StackLayout Padding="5" Orientation="Horizontal">
+                    <Image Source="warning" WidthRequest="30" HeightRequest="30"/>
+                    <Label Text="Por el momento solo personas registradas pueden crear una cuenta, pronto habilitaremos al public en general" TextColor="#658187"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Ingrese su numero de DUI" Margin="0, 10, 0, 0"/>
+            <material:MaterialTextField Placeholder="Su numero de DUI" x:Name="dui" HelperText="Introduzca su dui SIN guiones eje. (56689863)" InputType="Numeric"/>
+                <Button Text="VERIFICAR" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
