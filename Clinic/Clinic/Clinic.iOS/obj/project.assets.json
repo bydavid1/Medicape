@@ -1402,40 +1402,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FOX ONE\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\byron.martinezfgksa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic.iOS\\Clinic.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic.iOS\\Clinic.iOS.csproj",
       "projectName": "Clinic.iOS",
-      "projectPath": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic.iOS\\Clinic.iOS.csproj",
-      "packagesPath": "C:\\Users\\FOX ONE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic.iOS\\obj\\",
+      "projectPath": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic.iOS\\Clinic.iOS.csproj",
+      "packagesPath": "C:\\Users\\byron.martinezfgksa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\FOX ONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\byron.martinezfgksa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic\\Clinic.csproj": {
-              "projectPath": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic\\Clinic.csproj"
+            "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic\\Clinic.csproj": {
+              "projectPath": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic\\Clinic.csproj"
             }
           }
         }

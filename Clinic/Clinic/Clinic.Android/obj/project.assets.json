@@ -2210,40 +2210,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FOX ONE\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\byron.martinezfgksa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic.Android\\Clinic.Android.csproj",
+      "projectUniqueName": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic.Android\\Clinic.Android.csproj",
       "projectName": "Clinic.Android",
-      "projectPath": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic.Android\\Clinic.Android.csproj",
-      "packagesPath": "C:\\Users\\FOX ONE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic.Android\\obj\\",
+      "projectPath": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic.Android\\Clinic.Android.csproj",
+      "packagesPath": "C:\\Users\\byron.martinezfgksa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\FOX ONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\byron.martinezfgksa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid90"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic\\Clinic.csproj": {
-              "projectPath": "C:\\Users\\FOX ONE\\source\\repos\\DocAdmin\\Clinic\\Clinic\\Clinic\\Clinic.csproj"
+            "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic\\Clinic.csproj": {
+              "projectPath": "C:\\Users\\byron.martinezfgksa\\Documents\\Medicape\\Clinic\\Clinic\\Clinic\\Clinic.csproj"
             }
           }
         }
