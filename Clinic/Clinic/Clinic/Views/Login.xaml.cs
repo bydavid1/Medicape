@@ -39,7 +39,7 @@ namespace Clinic.Views
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
             {
-                message.IsVisible = true;
+                //message.IsVisible = true;
             }
             else
             {
