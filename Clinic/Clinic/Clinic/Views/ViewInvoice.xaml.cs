@@ -17,18 +17,20 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewInvoice : ContentPage
     {
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public ViewInvoice(int id, string fecha, string hora, string nombre, float total)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             getInvoice(id, fecha, hora, nombre, total);
         }
         private async void getInvoice(int id, string fecha, string hora, string nombre, float total)
         {
             try
             {
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
-                string send = url + "/Api/item_factura/read.php?idfactura=" + id;
+                string send = baseurl + "/Api/item_factura/read.php?idfactura=" + id;
                 var totaly = "$" + total;
                 HttpClient client = new HttpClient();
                 HttpResponseMessage connect = await client.GetAsync(send);

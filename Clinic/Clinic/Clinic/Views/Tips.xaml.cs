@@ -16,9 +16,13 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tips : ContentPage
     {
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public Tips()
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             getTips();
         }
 
@@ -26,9 +30,7 @@ namespace Clinic.Views
         {
             try
             {
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
-                string send = url + "/Api/tips/read.php";
+                string send = baseurl + "/Api/tips/read.php";
                 HttpClient client = new HttpClient();
                 HttpResponseMessage connect = await client.GetAsync(send);
 

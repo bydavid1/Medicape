@@ -19,18 +19,19 @@ namespace Clinic.Views
     {
         private int ids;
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public ViewEmployee(int id)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             ids = id;
             getPersonalInfo();
         }
 
         private async void getPersonalInfo()
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string send = url + "/Api/empleado/read_one.php?idempleado=" + ids;
+            string send = baseurl + "/Api/empleado/read_one.php?idempleado=" + ids;
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);
 

@@ -16,9 +16,12 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddVitalSigns : ContentPage
     {
+        Connection get = new Connection();
+        private string baseurl;
         public AddVitalSigns(int id)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             id_paciente.Text = Convert.ToString(id);
         }
 
@@ -45,10 +48,8 @@ namespace Clinic.Views
 
 
                 HttpClient client = new HttpClient();
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
                 string controlador = "/Api/perfil_paciente/create.php";
-                client.BaseAddress = new Uri(url);
+                client.BaseAddress = new Uri(baseurl);
 
                 string json = JsonConvert.SerializeObject(consultas);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");

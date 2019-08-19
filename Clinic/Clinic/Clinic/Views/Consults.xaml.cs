@@ -18,19 +18,16 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Consults : ContentPage
     {
-        BaseUrl get = new BaseUrl();
-        private string baseurl;
+        Connection get = new Connection();
         User name = new User();
+        private string baseurl;
         public Consults()
         {
             MaterialControls control = new MaterialControls();
             control.ShowLoading("Obteniendo lista de consultas");
             InitializeComponent();
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string server = url + "/Api";
-            CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            baseurl = get.BaseUrl;
+            bool result = get.TestConnection();
 
             if (result == true)
             {
@@ -53,7 +50,6 @@ namespace Clinic.Views
         {
             try
             {
-                baseurl = get.url;
                 string username = name.getName();
                 string url = baseurl + "/Api/usuario/read_id.php?username=" + username;
 

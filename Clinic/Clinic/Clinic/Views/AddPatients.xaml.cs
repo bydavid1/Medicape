@@ -20,9 +20,12 @@ namespace Clinic.Views
 	public partial class AddPatients : ContentPage
 	{
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public AddPatients ()
 		{
 			InitializeComponent ();
+            baseurl = get.BaseUrl;
             //Estado Civil
             p_estado.Items.Add("Casado");
             p_estado.Items.Add("Soltero");
@@ -149,13 +152,9 @@ namespace Clinic.Views
                     direccion = p_direccion.Text
                 };
 
-
-
                 HttpClient client = new HttpClient();
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
                 string controlador = "/Api/paciente/create.php";
-                client.BaseAddress = new Uri(url);
+                client.BaseAddress = new Uri(baseurl);
 
                 string json = JsonConvert.SerializeObject(pacientes);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");

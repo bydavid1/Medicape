@@ -21,13 +21,14 @@ namespace Clinic.Views
     public partial class Pending_Quotes : ContentPage
     {
         MaterialControls control = new MaterialControls();
-        BaseUrl get = new BaseUrl();
-        private string baseurl;
+        Connection get = new Connection();
         User name = new User();
+        private string baseurl;
         public Pending_Quotes()
         {
             InitializeComponent();
             getQuotes();
+            baseurl = get.BaseUrl;
         }
 
         private async void getQuotes()
@@ -36,7 +37,6 @@ namespace Clinic.Views
             {
 
                 control.ShowLoading("Obteniendo lista");
-                baseurl = get.url;
                 string username = name.getName();
                 string url2 = baseurl + "/Api/usuario/read_id.php?username=" + username;
 
@@ -150,10 +150,8 @@ namespace Clinic.Views
 
 
                                     HttpClient cliente = new HttpClient();
-                                    BaseUrl baseurl = new BaseUrl();
-                                    string url3 = baseurl.url;
                                     string controlador = "/Api/citas/create.php";
-                                    cliente.BaseAddress = new Uri(url);
+                                    cliente.BaseAddress = new Uri(baseurl);
 
                                     string json = JsonConvert.SerializeObject(citas);
                                     var content = new StringContent(json, Encoding.UTF8, "application/json");

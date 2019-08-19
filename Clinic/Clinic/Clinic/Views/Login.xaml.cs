@@ -20,9 +20,13 @@ namespace Clinic.Views
     {
         public static string Username = "";
         ILoginManager iml = null;
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public Login(ILoginManager ilm)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             iml = ilm;
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -30,10 +34,7 @@ namespace Clinic.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            MaterialControls control = new MaterialControls();
             control.ShowLoading("Iniciando sesion...");
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
             var usuario = user.Text;
             var contraseña = password.Text;
 
@@ -43,9 +44,7 @@ namespace Clinic.Views
             }
             else
             {
-                
-                CheckUrlConnection test = new CheckUrlConnection();
-                bool inf = test.TestConnection(url);
+                bool inf = get.TestConnection();
                 if (inf == true)
                 {
 
@@ -58,7 +57,7 @@ namespace Clinic.Views
                     HttpClient client = new HttpClient();
 
                     string controlador = "/Api/usuario/auth_admin.php";
-                    client.BaseAddress = new Uri(url);
+                    client.BaseAddress = new Uri(baseurl);
 
                     string json = JsonConvert.SerializeObject(users);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");

@@ -14,16 +14,15 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Medicaments : ContentPage
     {
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public Medicaments()
         {
-            MaterialControls control = new MaterialControls();
             control.ShowLoading("Obteniendo medicamentos");
             InitializeComponent();
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string server = url + "/Api";
-            CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            baseurl = get.BaseUrl;
+            bool result = get.TestConnection();
 
             if (result == true)
             {
@@ -48,8 +47,6 @@ namespace Clinic.Views
         {
             try
             {
-                BaseUrl get = new BaseUrl();
-                string baseurl = get.url;
                 string url = baseurl + "/Api/medicamentos/read.php";
 
                 HttpClient client = new HttpClient();

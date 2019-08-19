@@ -2,7 +2,6 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:Clinic"
-             xmlns:eventToCommand="clr-namespace:Clinic.Behavior"
              Title="Masters"
              x:Class="Clinic.Views.MainPage">
 
@@ -46,9 +45,6 @@
                                 </custom:CustomViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                        <ListView.Behaviors>
-                            <eventToCommand:EventToCommandBehavior EventName="ItemTapped" Command="{Binding MenuItemTapped}"/>
-                        </ListView.Behaviors>
                     </ListView>
                 </Grid>
             </Grid>

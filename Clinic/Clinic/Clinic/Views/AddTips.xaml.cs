@@ -18,9 +18,12 @@ namespace Clinic.Views
     public partial class AddTips : ContentPage
     {
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public AddTips()
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -66,10 +69,8 @@ namespace Clinic.Views
 
 
                 HttpClient client = new HttpClient();
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
                 string controlador = "/Api/tips/create.php";
-                client.BaseAddress = new Uri(url);
+                client.BaseAddress = new Uri(baseurl);
 
                 string json = JsonConvert.SerializeObject(citas);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");

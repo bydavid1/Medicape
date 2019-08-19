@@ -20,10 +20,12 @@ namespace Clinic.Views
     {
         private int ids;
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public ViewPatient(int id)
         {
             InitializeComponent();
-
+            baseurl = get.BaseUrl;
             ids = id;
             getPersonalInfo();
             getExpedient();
@@ -32,9 +34,7 @@ namespace Clinic.Views
 
         private async void getVital()
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string send = url + "/Api/perfil_paciente/read_one.php?idpaciente=" + ids;
+            string send = baseurl + "/Api/perfil_paciente/read_one.php?idpaciente=" + ids;
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);
 
@@ -56,9 +56,7 @@ namespace Clinic.Views
 
         private async void getExpedient()
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string send = url + "/Api/consultas/custom_read.php?idpaciente=" + ids;
+            string send = baseurl + "/Api/consultas/custom_read.php?idpaciente=" + ids;
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);
 
@@ -76,9 +74,7 @@ namespace Clinic.Views
 
         private async void getPersonalInfo()
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string send = url + "/Api/paciente/read_one.php?idpaciente=" + ids;
+            string send = baseurl + "/Api/paciente/read_one.php?idpaciente=" + ids;
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);
 

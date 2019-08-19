@@ -17,17 +17,18 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchEmployee : ContentPage
     {
+        Connection get = new Connection();
+        private string baseurl;
         public SearchEmployee()
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
         }
 
         private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
             string query = searchBar.Text;
-            string send = url + "/Api/empleado/search.php?query=" + query;
+            string send = baseurl + "/Api/empleado/search.php?query=" + query;
 
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);

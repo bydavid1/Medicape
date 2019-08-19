@@ -20,12 +20,14 @@ namespace Clinic.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class addQuotes : ContentPage
 	{
-        User name = new User();
         MaterialControls control = new MaterialControls();
-        BaseUrl get = new BaseUrl();
+        Connection get = new Connection();
+        User name = new User();
+        private string baseurl;
         public addQuotes (string nombre, string apellido,int id)
 		{
 			InitializeComponent ();
+            baseurl = get.BaseUrl;
             p_nombre.Text = nombre;
             p_apellido.Text = apellido;
             idd.Text = Convert.ToString(id);
@@ -67,8 +69,6 @@ namespace Clinic.Views
             {
 
                     control.ShowLoading("Registrando");
-
-                    string baseurl = get.url;
                     string username = name.getName();
                     string url2 = baseurl + "/Api/usuario/read_id.php?username=" + username;
 

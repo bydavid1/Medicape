@@ -18,7 +18,7 @@ namespace Clinic.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Patients : ContentPage
 	{
-        BaseUrl get = new BaseUrl();
+        Connection get = new Connection();
         private string baseurl;
         public Patients ()
 		{
@@ -28,10 +28,8 @@ namespace Clinic.Views
             options.Items.Add("Buscar por nombre");
             options.Items.Add("Buscar por apellido");
             options.Items.Add("Buscar por DUI");
-            baseurl = get.url;
-            string server = baseurl+"/Api";
-            CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            baseurl = get.BaseUrl;
+            bool result = get.TestConnection();
 
             if (result == true)
             {

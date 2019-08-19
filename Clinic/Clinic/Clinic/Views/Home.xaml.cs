@@ -17,16 +17,17 @@ namespace Clinic.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Home : ContentPage
 	{
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
+        private string url;
         public Home ()
 		{
-            MaterialControls control = new MaterialControls();
+
             control.ShowLoading("Obteniendo datos...");
             InitializeComponent ();
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string server = url+"/Api";
-            CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            baseurl = get.BaseUrl;
+            bool result = get.TestConnection();
 
             if (result == true)
             {
@@ -43,9 +44,7 @@ namespace Clinic.Views
         {
             try
             {
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
-                url = url+"/Api/citas/read_date.php";
+                url = baseurl+"/Api/citas/read_date.php";
 
                 HttpClient client = new HttpClient();
                 HttpResponseMessage connect = await client.GetAsync(url);

@@ -22,9 +22,13 @@ namespace Clinic.Views
     {
         private int ids;
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
+
         public UpdateEmployee(int id)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             e_especialidad.Items.Add("Medico General");
             e_especialidad.Items.Add("Odontologo");
             e_especialidad.Items.Add("Ginecologo");
@@ -53,9 +57,7 @@ namespace Clinic.Views
 
         private async void getPersonalinfo()
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string send = url + "/Api/empleado/read_one.php?idempleado=" + ids;
+            string send = baseurl + "/Api/empleado/read_one.php?idempleado=" + ids;
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);
 
@@ -232,10 +234,8 @@ namespace Clinic.Views
 
 
                 HttpClient client = new HttpClient();
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
                 string controlador = "/Api/empleado/update.php";
-                client.BaseAddress = new Uri(url);
+                client.BaseAddress = new Uri(baseurl);
 
                 string json = JsonConvert.SerializeObject(empleados);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");

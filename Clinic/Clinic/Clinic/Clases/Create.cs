@@ -9,10 +9,11 @@ namespace Clinic.Clases
 {
    public class Create
     {
-
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public async void create(string nombre, string apellido, int idpaciente, int id)
         {
-            MaterialControls control = new MaterialControls();
             control.ShowLoading("Registrando");
             Lista_Item_Espera empleados = new Lista_Item_Espera
             {
@@ -26,10 +27,9 @@ namespace Clinic.Clases
 
 
             HttpClient client = new HttpClient();
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
             string controlador = "/Api/item_espera/create.php";
-            client.BaseAddress = new Uri(url);
+            baseurl = get.BaseUrl;
+            client.BaseAddress = new Uri(baseurl);
 
             string json = JsonConvert.SerializeObject(empleados);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

@@ -17,17 +17,19 @@ namespace Clinic.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewExpedient : ContentPage
     {
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public ViewExpedient(int id)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             getExpedient(id);
         }
 
         private async void getExpedient(int id)
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string send = url + "/Api/item_expediente/read_one.php?idconsulta=" + id;
+            string send = baseurl + "/Api/item_expediente/read_one.php?idconsulta=" + id;
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);
 

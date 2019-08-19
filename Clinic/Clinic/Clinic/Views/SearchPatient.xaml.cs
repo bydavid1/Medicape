@@ -18,19 +18,21 @@ namespace Clinic.Views
     public partial class SearchPatient : ContentPage
     {
         private int ids;
+        MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public SearchPatient(string origin, int id)
         {
             InitializeComponent();
+            baseurl = get.BaseUrl;
             ids = id;
             origen.Text = origin;
         }
 
         private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
             string query = searchBar.Text;
-            string send = url + "/Api/paciente/search.php?query=" + query;
+            string send = baseurl + "/Api/paciente/search.php?query=" + query;
 
             HttpClient client = new HttpClient();
             HttpResponseMessage connect = await client.GetAsync(send);

@@ -20,15 +20,17 @@ namespace Clinic.Views
     public partial class AddConsult : ContentPage
     {
         MaterialControls control = new MaterialControls();
-        BaseUrl get = new BaseUrl();
-        private string baseurl;
+        Connection get = new Connection();
         User name = new User();
+        private string baseurl;
+
         public AddConsult(string nombre, string apellido, int id)
         {
             InitializeComponent();
             p_nombre.Text = nombre;
             p_apellido.Text = apellido;
             id_paciente.Text = Convert.ToString(id);
+            baseurl = get.BaseUrl;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -92,9 +94,6 @@ namespace Clinic.Views
                 try
             {
                 control.ShowLoading("Registrando");
-
-                    baseurl = get.url;
-
                     string username = name.getName();
                     string url2 = baseurl + "/Api/usuario/read_id.php?username=" + username;
 
@@ -124,10 +123,8 @@ namespace Clinic.Views
 
 
                         HttpClient client = new HttpClient();
-
-                        string url = get.url;
                         string controlador = "/Api/consultas/create.php";
-                        client.BaseAddress = new Uri(url);
+                        client.BaseAddress = new Uri(baseurl);
 
                         string json = JsonConvert.SerializeObject(consultas);
                         var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -150,7 +147,7 @@ namespace Clinic.Views
                             };
 
                             controlador = "/Api/item_expediente/create.php";
-                            client.BaseAddress = new Uri(url);
+                            client.BaseAddress = new Uri(baseurl);
 
                             json = JsonConvert.SerializeObject(expediente);
                             content = new StringContent(json, Encoding.UTF8, "application/json");

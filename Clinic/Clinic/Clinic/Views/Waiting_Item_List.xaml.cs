@@ -23,16 +23,15 @@ namespace Clinic.Views
     {
         private int ids;
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public Waiting_Item_List(int id)
         {
             ids = id;
             control.ShowLoading("Obteniendo lista de espera");
             InitializeComponent();
-            BaseUrl get = new BaseUrl();
-            string url = get.url;
-            string server = url + "/Api";
-            CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            baseurl = get.BaseUrl;
+            bool result = get.TestConnection();
 
             if (result == true)
             {
@@ -48,8 +47,6 @@ namespace Clinic.Views
         {
             try
             {
-                BaseUrl get = new BaseUrl();
-                string baseurl = get.url;
                 string url = baseurl + "/Api/item_Espera/read.php?idlista="+id;
 
                 HttpClient client = new HttpClient();
@@ -104,16 +101,13 @@ namespace Clinic.Views
                 if (res == true)
                 {
                     control.ShowLoading("Eliminando");
-
-                    BaseUrl get = new BaseUrl();
-                    string urlbase = get.url;
-                    string url = urlbase + "/Api/lista_espera/delete.php?idlista=" + ids;
+                    string url = baseurl + "/Api/lista_espera/delete.php?idlista=" + ids;
 
                     HttpClient client = new HttpClient();
                     HttpResponseMessage connect = await client.GetAsync(url);
                     if (connect.StatusCode == HttpStatusCode.OK)
                     {
-                        url = urlbase + "/Api/item_espera/delete.php?idlista=" + ids;
+                        url = baseurl + "/Api/item_espera/delete.php?idlista=" + ids;
                        connect = await client.GetAsync(url);
                         if (connect.StatusCode == HttpStatusCode.OK)
                         {

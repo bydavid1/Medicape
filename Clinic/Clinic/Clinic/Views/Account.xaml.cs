@@ -17,12 +17,12 @@ namespace Clinic.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Account : ContentPage
 	{
-        BaseUrl get = new BaseUrl();
-        private string baseurl;
+        Connection get = new Connection();
         User name = new User();
-		public Account ()
+        private string baseurl;
+        public Account ()
 		{
-            baseurl = get.url;
+            baseurl = get.BaseUrl;
 			InitializeComponent ();
             getInfo();
         }
@@ -31,7 +31,7 @@ namespace Clinic.Views
         {
             try
             {
-               string username = name.getName();
+                string username = name.getName();
                 string url = baseurl + "/Api/usuario/read_id.php?username="+username;
 
                 HttpClient client = new HttpClient();

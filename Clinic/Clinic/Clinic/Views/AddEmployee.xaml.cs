@@ -20,9 +20,12 @@ namespace Clinic.Views
 	public partial class AddEmployee : ContentPage
 	{
         MaterialControls control = new MaterialControls();
+        Connection get = new Connection();
+        private string baseurl;
         public AddEmployee ()
 		{
 			InitializeComponent ();
+            baseurl = get.BaseUrl;
             e_especialidad.Items.Add("Medico General");
             e_especialidad.Items.Add("Odontologo");
             e_especialidad.Items.Add("Ginecologo");
@@ -201,10 +204,8 @@ namespace Clinic.Views
 
 
                 HttpClient client = new HttpClient();
-                BaseUrl get = new BaseUrl();
-                string url = get.url;
                 string controlador = "/Api/empleado/create.php";
-                client.BaseAddress = new Uri(url);
+                client.BaseAddress = new Uri(baseurl);
 
                 string json = JsonConvert.SerializeObject(empleados);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");

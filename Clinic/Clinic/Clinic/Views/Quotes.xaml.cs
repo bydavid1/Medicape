@@ -18,18 +18,16 @@ namespace Clinic.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Quotes : ContentPage
 	{
-        BaseUrl get = new BaseUrl();
-        private string baseurl;
+        Connection get = new Connection();
         User name = new User();
+        private string baseurl;
         public Quotes ()
 		{
             MaterialControls control = new MaterialControls();
             control.ShowLoading("Obteniendo lista de citas");
             InitializeComponent ();
-            baseurl = get.url;
-            string server = baseurl+"/Api";
-            CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            baseurl = get.BaseUrl;
+            bool result = get.TestConnection();
 
             if (result == true)
             {
