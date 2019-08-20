@@ -17,7 +17,7 @@
                             <Button BackgroundColor="white" TextColor="#008ca5"  Text="Agregar cita" HeightRequest="20" HorizontalOptions="EndAndExpand" FontSize="Micro" FontFamily="{StaticResource NormalFont}" Clicked="Button_Clicked"/>
                         </StackLayout>
                         <StackLayout HeightRequest="230">
-                            <ListView x:Name="mylist" RowHeight="60" IsPullToRefreshEnabled="True">
+                            <ListView HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="{Binding IsRefreshing}" RefreshCommand="{Binding RefreshCommand}" ItemsSource="{Binding Items}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -44,7 +44,6 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <Label Text="No se encontraron citas" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="False" x:Name="message"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
