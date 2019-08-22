@@ -20,7 +20,9 @@
                 <Frame Padding="20,25,20,20" BackgroundColor="White" CornerRadius="5" Margin="0, 15, 0, 0">
                     <StackLayout>
                         <Label Text="Nombres" FontSize="Default" TextColor="Black" VerticalOptions="Center" />
-                        <material:MaterialTextField Placeholder="Ingrese los nombres" BackgroundColor="#DCDCDC" InputType="Text"  TintColor="#008ca5" FloatingPlaceholderEnabled="False"  x:Name="e_nombre" >
+                        <material:MaterialTextField Placeholder="Ingrese los nombres" BackgroundColor="#DCDCDC" InputType="Text" 
+                                                    TintColor="#008ca5" FloatingPlaceholderEnabled="False" 
+                                                    Text="{Binding e_nombre}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:TextValidator/>
                             </material:MaterialTextField.Behaviors >
@@ -28,7 +30,9 @@
 
 
                         <Label Text="Apellidos" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Ingrese los apellidos" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Text" FloatingPlaceholderEnabled="False"  x:Name="e_apellido">
+                        <material:MaterialTextField Placeholder="Ingrese los apellidos" BackgroundColor="#DCDCDC" TintColor="#008ca5"
+                                                    InputType="Text" FloatingPlaceholderEnabled="False"
+                                                    Text="{Binding e_apellido}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:TextValidator/>
                             </material:MaterialTextField.Behaviors >
@@ -36,64 +40,73 @@
 
 
                         <Label Text="Sexo" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_sexo"/>
+                        <Picker SelectedItem="{Binding s_sexo}" ItemsSource="{Binding l_sexo}" Title="Seleccione..."/>
                         <Label Text="Estado civil" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_estado"/>
+                        <Picker SelectedItem="{Binding s_estado}" ItemsSource="{Binding l_estado}" Title="Seleccione..."/>
+                        <Label Text="Especialidad" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
+                        <Picker SelectedItem="{Binding s_especialidad}" ItemsSource="{Binding l_especialidad}" Title="Seleccione..."/>
 
                         <Label Text="DUI" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Ingrese el número de DUI" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Numeric" FloatingPlaceholderEnabled="False"  x:Name="e_dui" MaxLength="9">
+                        <material:MaterialTextField Placeholder="Ingrese el número de DUI" BackgroundColor="#DCDCDC" TintColor="#008ca5"
+                                                    InputType="Numeric" FloatingPlaceholderEnabled="False"
+                                                    MaxLength="9" Text="{Binding e_dui}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:NumeroValidator/>
                             </material:MaterialTextField.Behaviors >
                         </material:MaterialTextField>
 
                         <Label Text="NIT" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Ingrese el número el NIT" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Numeric" FloatingPlaceholderEnabled="False"  x:Name="e_nit" MaxLength="15">
+                        <material:MaterialTextField Placeholder="Ingrese el número el NIT" BackgroundColor="#DCDCDC" TintColor="#008ca5"
+                                                    InputType="Numeric" FloatingPlaceholderEnabled="False"
+                                                    MaxLength="15" Text="{Binding e_nit}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:NumeroValidator/>
                             </material:MaterialTextField.Behaviors >
                         </material:MaterialTextField>
 
                         <Label Text="Fecha de nacimiento" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <DatePicker  x:Name="e_nac"/>
+                        <DatePicker Date="{Binding e_nac}"/>
 
                         <Label Text="Teléfono" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Ingrese el número de telefono" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Numeric" FloatingPlaceholderEnabled="False"  x:Name="e_telefono" MaxLength="8">
+                        <material:MaterialTextField Placeholder="Ingrese el número de telefono" BackgroundColor="#DCDCDC" TintColor="#008ca5"
+                                                    InputType="Numeric" FloatingPlaceholderEnabled="False"
+                                                    MaxLength="8" Text="{Binding e_telefono}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:NumeroValidator/>
                             </material:MaterialTextField.Behaviors >
                         </material:MaterialTextField>
 
                         <Label Text="Celular" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Ingrese el número de telefono" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Numeric" FloatingPlaceholderEnabled="False"  x:Name="e_celular" MaxLength="8">
+                        <material:MaterialTextField Placeholder="Ingrese el número de telefono" BackgroundColor="#DCDCDC" TintColor="#008ca5" 
+                                                    InputType="Numeric" FloatingPlaceholderEnabled="False"
+                                                    MaxLength="8" Text="{Binding e_celular}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:NumeroValidator/>
                             </material:MaterialTextField.Behaviors >
                         </material:MaterialTextField>
 
                         <Label Text="Correo" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Ingrese correo electronico" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Email" FloatingPlaceholderEnabled="False"  x:Name="e_correo" ErrorText="Email invalido" HasError="False">
+                        <material:MaterialTextField Placeholder="Ingrese correo electronico" BackgroundColor="#DCDCDC" TintColor="#008ca5" 
+                                                    InputType="Email" FloatingPlaceholderEnabled="False"
+                                                    ErrorText="Email invalido" HasError="False" Text="{Binding e_correo}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:ValidateEmail/>
                             </material:MaterialTextField.Behaviors>
                         </material:MaterialTextField>
 
-
-
-                        <Label Text="Especialidad" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_especialidad"/>
-
                         <Label Text="Departamento" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <material:MaterialTextField Placeholder="Eje:Santa Ana" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Text" FloatingPlaceholderEnabled="False"  x:Name="e_departamento">
+                        <material:MaterialTextField Placeholder="Eje:Santa Ana" BackgroundColor="#DCDCDC" TintColor="#008ca5" 
+                                                    InputType="Text" FloatingPlaceholderEnabled="False"
+                                                    Text="{Binding e_departamento}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:TextValidator/>
                             </material:MaterialTextField.Behaviors >
                         </material:MaterialTextField>
 
-
-
                         <Label Text="Municipio" FontSize="Default" TextColor="Black" VerticalOptions="Start"/>
-                        <material:MaterialTextField Placeholder="Eje: Metapan" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Text" FloatingPlaceholderEnabled="False"  x:Name="e_municipio">
+                        <material:MaterialTextField Placeholder="Eje: Metapan" BackgroundColor="#DCDCDC" TintColor="#008ca5" 
+                                                    InputType="Text" FloatingPlaceholderEnabled="False"
+                                                    Text="{Binding e_municipio}">
                             <material:MaterialTextField.Behaviors>
                                 <localV:TextValidator/>
                             </material:MaterialTextField.Behaviors >
@@ -101,22 +114,14 @@
 
 
                         <Label Text="Dirección" FontSize="Default" TextColor="Black" VerticalOptions="Start"/>
-                        <material:MaterialTextField Placeholder="Eje: Metapan" BackgroundColor="#DCDCDC"   TintColor="#008ca5" InputType="Text" FloatingPlaceholderEnabled="False"  x:Name="e_dir">
+                        <material:MaterialTextField Placeholder="Eje: Metapan" BackgroundColor="#DCDCDC" TintColor="#008ca5"
+                                                    InputType="Text" FloatingPlaceholderEnabled="False" 
+                                                    Text="{Binding e_dir}">
                         </material:MaterialTextField>
-                        <Label Text="Solvencia" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_solvencia"/>
-                        <Label Text="Antecedentes" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_antecedentes"/>
-                        <Label Text="Constancia de titulo" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_constancia"/>
-                        <Label Text="Certificado" FontSize="Default" TextColor="Black" VerticalOptions="Start" />
-                        <Picker x:Name="e_certificado"/>
-
-
                     </StackLayout>
                 </Frame>
                 <StackLayout Margin="10">
-                    <material:MaterialButton BackgroundColor="#DCDCDC" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="Registrar" TextColor="Black"  Font="Arial" Image="pencil"   PressedBackgroundColor="#008ca5" FontAttributes="Italic" Clicked="Button_Clicked" IsEnabled="True"  />
+                    <material:MaterialButton Command="{Binding Create}" BackgroundColor="#DCDCDC" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="Registrar" TextColor="Black"  Image="pencil"  PressedBackgroundColor="#008ca5"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

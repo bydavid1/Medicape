@@ -52,15 +52,6 @@ namespace Clinic.Views
                 _celular.Text = empleado.celular;
                 _correo.Text = empleado.email;
                 _especialidad.Text = empleado.especialidad;
-                _antecedentes.Text = empleado.antecedentes;
-                _solvencia.Text = empleado.solvencia;
-                _titulado.Text = empleado.constancia_Titulo;
-                _certificado.Text = empleado.certificado_Salud;
-                _fecha_contratacion.Text = empleado.fecha_Contratacion;
-                if (empleado.antecedentes != "Entregado" || empleado.solvencia != "Entregado" || empleado.constancia_Titulo != "Entregado" || empleado.certificado_Salud != "Entregado")
-                {
-                    content.IsVisible = true;
-                }
             }
             else
             {

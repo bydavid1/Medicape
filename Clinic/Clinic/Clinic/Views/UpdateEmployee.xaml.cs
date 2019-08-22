@@ -78,10 +78,6 @@ namespace Clinic.Views
                 e_celular.Text = empleado.celular;
                 e_correo.Text = empleado.email;
                 e_especialidad.SelectedItem = empleado.especialidad;
-                e_antecedentes.SelectedItem = empleado.antecedentes;
-                e_solvencia.SelectedItem = empleado.solvencia;
-                e_constancia.SelectedItem = empleado.constancia_Titulo;
-                e_certificado.SelectedItem = empleado.certificado_Salud;
             }
             else
             {
@@ -223,10 +219,6 @@ namespace Clinic.Views
                     municipio = e_municipio.Text,
                     direccion = e_dir.Text,
                     nit = e_nit.Text,
-                    antecedentes = Convert.ToString(e_antecedentes.SelectedItem),
-                    solvencia = Convert.ToString(e_solvencia.SelectedItem),
-                    constancia_Titulo = Convert.ToString(e_constancia.SelectedItem),
-                    certificado_Salud = Convert.ToString(e_certificado.SelectedItem),
                     fecha_Contratacion = date
 
                 };

@@ -72,8 +72,16 @@ namespace Clinic.Views
                 }
                 else if (origen.Text == "lists")
                 {
-                    Create handle = new Create();
-                    handle.create(tapped.nombres, tapped.apellidos, tapped.idpaciente, ids);
+                    control.ShowLoading("Registrando");
+                    Lista_Item_Espera empleados = new Lista_Item_Espera
+                    {
+                        nombre = tapped.nombres,
+                        apellido = tapped.apellidos,
+                        idpaciente = tapped.idpaciente,
+                        idlista = ids
+                    };
+                    Functions create = new Functions();
+                    create.Insert(empleados, "/Api/item_espera/create.php");
 
                 }
                 else if (origen.Text == "invoice")
