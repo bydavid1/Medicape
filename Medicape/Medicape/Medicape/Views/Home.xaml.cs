@@ -57,7 +57,7 @@ namespace Medicape.Views
 
         private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Invoices());
+            DisplayAlert(":)","Proximamente", "ok");
         }
 
         private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)

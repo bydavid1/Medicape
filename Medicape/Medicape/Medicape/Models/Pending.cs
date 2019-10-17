@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Medicape.Models
+namespace Clinic.Models
 {
     class Pending
     {
@@ -10,9 +10,9 @@ namespace Medicape.Models
         public string fecha { get; set; }
         public string hora { get; set; }
         public string tipo { get; set; }
+        public int idpaciente { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public int idpaciente { get; set; }
 
         public int idempleado { get; set; }
     }

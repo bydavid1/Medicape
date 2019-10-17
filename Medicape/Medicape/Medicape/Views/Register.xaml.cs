@@ -2,12 +2,8 @@
 using Clinic.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -36,8 +32,7 @@ namespace Medicape.Views
                     user_Name = username.Text,
                     user_Password = pass.Text,
                     email = "user@email.com",
-                    user_type = "user",
-                    reference = ids
+                    user_type = 2
                 };
 
 

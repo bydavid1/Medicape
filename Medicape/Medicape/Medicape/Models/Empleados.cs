@@ -15,16 +15,13 @@ namespace Clinic.Models
         public string dui { get; set; }
         public string nit { get; set; }
         public string especialidad { get; set; }
+        public int idespecialidad { get; set; }
         public string telefono { get; set; }
         public string celular { get; set; }
         public string email { get; set; }
         public string departamento { get; set; }
         public string municipio { get; set; }
         public string direccion { get; set; }
-        public string antecedentes { get; set; }
-        public string solvencia { get; set; }
-        public string constancia_Titulo { get; set; }
-        public string certificado_Salud { get; set; }
         public string fecha_Contratacion { get; set; }
     }
 }

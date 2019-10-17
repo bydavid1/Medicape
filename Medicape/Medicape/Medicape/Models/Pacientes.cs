@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Clinic.Models
 {
-    class Pacientes
+   public class Pacientes
     {
         public int idpaciente { get; set; }
-        public string num_Expediente { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
         public string fecha_Nac { get; set; }

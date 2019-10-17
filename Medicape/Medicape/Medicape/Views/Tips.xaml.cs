@@ -2,12 +2,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -35,7 +31,7 @@ namespace Medicape.Views
                 if (connect.StatusCode == HttpStatusCode.OK)
                 {
                     var response = await client.GetStringAsync(send);
-                    var tips = JsonConvert.DeserializeObject<List<Models.Tips>>(response);
+                    var tips = JsonConvert.DeserializeObject<List<Clinic.Models.Tips>>(response);
                     mylist.ItemsSource = tips;
                 }
                 else

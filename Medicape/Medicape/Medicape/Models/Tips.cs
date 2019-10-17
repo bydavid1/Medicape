@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Medicape.Models
+namespace Clinic.Models
 {
     class Tips
     {
