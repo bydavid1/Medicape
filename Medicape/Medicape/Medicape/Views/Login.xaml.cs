@@ -45,7 +45,7 @@ namespace Medicape.Views
             {
 
                 CheckUrlConnection test = new CheckUrlConnection();
-                bool inf = test.TestConnection(url);
+                bool inf = test.TestConnection();
                 if (inf == true)
                 {
 
@@ -70,7 +70,7 @@ namespace Medicape.Views
                     {
                         var res = await response.Content.ReadAsStringAsync();
                         var result = res.ToString().Replace('"', ' ').Trim();
-                        App.Current.Properties["name"] = result;
+                        App.Current.Properties["id"] = result;
                         App.Current.Properties["IsLoggedIn"] = true;
                        iml.ShowMainPage();
                     }

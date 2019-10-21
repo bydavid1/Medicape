@@ -33,7 +33,7 @@ namespace Medicape.Views
 
 
                 CheckUrlConnection test = new CheckUrlConnection();
-                bool inf = test.TestConnection(baseurl);
+                bool inf = test.TestConnection();
                 if (inf == true)
                 {
 

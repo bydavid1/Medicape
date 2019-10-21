@@ -16,25 +16,23 @@ using XF.Material.Forms.UI.Dialogs;
 namespace Medicape.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChooseDoctor : ContentPage
+    public partial class ChooseEspecialty : ContentPage
     {
         BaseUrl get = new BaseUrl();
         private string baseurl;
-        private int IdEsp;
-        public ChooseDoctor(int id)
+        public ChooseEspecialty()
         {
             InitializeComponent();
             baseurl = get.url;
-            IdEsp = id;
-            getDoctors();
+            GetEspecialties();
         }
 
-        private async void getDoctors()
+        private async void GetEspecialties()
         {
             try
             {
-                var loadingDialog = await MaterialDialog.Instance.LoadingDialogAsync(message: "Buscando doctores");
-                string url = baseurl + "/Api/empleado/getDoctors.php?idespecialidad=" + IdEsp;
+                var loadingDialog = await MaterialDialog.Instance.LoadingDialogAsync(message: "Buscando especialidades");
+                string url = baseurl + "/Api/especialidades/getEspecialties.php";
 
                 HttpClient client = new HttpClient();
                 HttpResponseMessage connect = await client.GetAsync(url);
@@ -42,14 +40,14 @@ namespace Medicape.Views
                 if (connect.StatusCode == HttpStatusCode.OK)
                 {
                     var response = await client.GetStringAsync(url);
-                    var info = JsonConvert.DeserializeObject<List<Empleados>>(response);
+                    var info = JsonConvert.DeserializeObject<List<Especialidades>>(response);
                     mylist.ItemsSource = info;
                     await loadingDialog.DismissAsync();
                 }
                 else
                 {
                     await loadingDialog.DismissAsync();
-                    await  DisplayAlert("Error", "No se pudieron cargar los datos", "Ok");
+                    await DisplayAlert("Error", "No se pudieron cargar los datos", "Ok");
                 }
             }
             catch (Exception)
@@ -59,19 +57,14 @@ namespace Medicape.Views
             }
         }
 
-        private void Mylist_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e != null)
-            {
-                var list = (ListView)sender;
-                var tapped = (list.SelectedItem as Empleados);
 
-                Navigation.PushAsync(new ChooseHour(tapped.idempleado));
-            }
-        }
+            var list = (ListView)sender;
+            var tapped = (list.SelectedItem as Especialidades);
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
-        {
+            Navigation.PushAsync(new ChooseDoctor(tapped.idespecialidad));
+
 
         }
     }

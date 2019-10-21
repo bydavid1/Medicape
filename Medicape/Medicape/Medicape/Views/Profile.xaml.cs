@@ -30,7 +30,7 @@ namespace Medicape.Views
             string url = get.url;
             string server = url + "/Api";
             CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            bool result = test.TestConnection();
 
             if (result != true)
             {

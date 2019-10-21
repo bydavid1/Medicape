@@ -22,7 +22,7 @@ namespace Medicape.Views
             string url = get.url;
             string server = url + "/Api";
             CheckUrlConnection test = new CheckUrlConnection();
-            bool result = test.TestConnection(server);
+            bool result = test.TestConnection();
 
             if (result != true)
             {
@@ -72,7 +72,7 @@ namespace Medicape.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ChooseDoctor());
+            Navigation.PushAsync(new ChooseEspecialty());
         }
     }
 }

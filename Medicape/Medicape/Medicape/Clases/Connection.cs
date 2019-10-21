@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace Clinic.ViewModels
+namespace Clinic.Clases
 {
-   public class CheckUrlConnection
+    public class Connection
     {
-        public string BaseUrl = "http://192.168.42.236";
+        public string BaseUrl = "http://192.168.42.19";
 
         public bool TestConnection()
         {

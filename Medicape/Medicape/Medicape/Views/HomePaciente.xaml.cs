@@ -30,7 +30,7 @@ namespace Medicape.Views
 
         private void MaterialCard_Clicked_2(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ChooseDoctor());
+            Navigation.PushAsync(new ChooseEspecialty());
         }
     }
 }

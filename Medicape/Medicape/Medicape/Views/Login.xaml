@@ -25,8 +25,8 @@
                         <StackLayout Padding="20">
                             <material:MaterialTextField  Placeholder="Username"  BackgroundColor="#eaeaea" InputType="Text"  TintColor="#15ccc8" FloatingPlaceholderEnabled="False" LeadingIcon="us" LeadingIconTintColor="#696969" PlaceholderColor="#c8c8c8" x:Name="user"/>
                             <material:MaterialTextField  Placeholder="Password"  BackgroundColor="#eaeaea" InputType="Password"  TintColor="#15ccc8" FloatingPlaceholderEnabled="False" LeadingIcon="lock" LeadingIconTintColor="#696969"  PlaceholderColor="#c8c8c8" x:Name="password"/>
-                            <Button Text="LOGIN" TextColor="White" FontAttributes="Bold" CornerRadius="23" HeightRequest="46" BackgroundColor="#15ccc8" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="25,0,25,0"></Button>
-                            <Label TextColor="Red" Text="Ingrese todos los datos" x:Name="message"/>
+                            <Button Text="LOGIN" TextColor="White" FontAttributes="Bold" CornerRadius="23" HeightRequest="46" BackgroundColor="#15ccc8" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="25,0,25,0" Clicked="Button_Clicked"></Button>
+                            <Label TextColor="Red" Text="Ingrese todos los datos" x:Name="message" IsVisible="False" HorizontalOptions="Center"/>
                             <material:MaterialLabel Text="Forgot password?" TextDecorations="Underline" TextColor="#99000000" HorizontalOptions="Center" />
                         </StackLayout>
                     </StackLayout>
