@@ -90,5 +90,16 @@ namespace Medicape.Views
                 control.ShowSnackBar("Hay datos incompletos");
             }
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            control.ShowLoading("Cerrando sesion...");
+            App.Current.Logout();
+        }
     }
 }

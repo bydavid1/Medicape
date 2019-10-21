@@ -23,7 +23,6 @@
                                             <Image Source="calendar" WidthRequest="15" HeightRequest="15"/>
                                             <Label Text="{Binding fecha}"  TextColor="#008ca5" />
                                         </StackLayout>
-                                        <Label Text="{Binding tipo}" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="EndAndExpand">
                                         <Image Source="clock" WidthRequest="20" HeightRequest="20"/>

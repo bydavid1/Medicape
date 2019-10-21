@@ -18,6 +18,7 @@ namespace Medicape.Views
         public Home ()
 		{
 			InitializeComponent ();
+            
             BaseUrl get = new BaseUrl();
             string url = get.url;
             string server = url + "/Api";
@@ -36,8 +37,6 @@ namespace Medicape.Views
             ToolbarItem tbi = (ToolbarItem)sender;
             if (tbi.Text == "Cerrar Sesion")
             {
-                control.ShowLoading("Cerrando sesion...");
-                App.Current.Logout();
             }
             else if (tbi.Text == "Solicitudes")
             {
@@ -57,7 +56,7 @@ namespace Medicape.Views
 
         private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            DisplayAlert(":)","Proximamente", "ok");
+            Navigation.PushAsync(new Requests());
         }
 
         private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)

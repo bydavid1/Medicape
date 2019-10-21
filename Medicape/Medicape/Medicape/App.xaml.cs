@@ -25,13 +25,13 @@ namespace Medicape
             }
             else
             {
-                MainPage = new NavigationPage(new Views.HomePaciente());
+                MainPage = new NavigationPage(new Views.MainPage());
             }
         }
 
         public void ShowMainPage()
         {
-            MainPage = new NavigationPage(new Views.HomePaciente());
+            MainPage = new NavigationPage(new Views.MainPage());
         }
 
         public void Logout()

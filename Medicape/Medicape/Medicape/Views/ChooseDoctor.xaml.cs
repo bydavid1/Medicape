@@ -49,7 +49,7 @@ namespace Medicape.Views
                 else
                 {
                     await loadingDialog.DismissAsync();
-                    await  DisplayAlert("Error", "No se pudieron cargar los datos", "Ok");
+                    await  DisplayAlert("Error", "No se encontraron doctores", "Ok");
                 }
             }
             catch (Exception)

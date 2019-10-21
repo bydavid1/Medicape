@@ -5,13 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
-             x:Class="Medicape.Views.scheduleQuote">
+             x:Class="Medicape.Views.CustomQuote">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10">
                 <DatePicker x:Name="fech" />
                 <TimePicker x:Name="hour" />
-                <Picker x:Name="type" Title="Tipo de consulta"/>
                 <Button Text="enviar solicitud" Clicked="Button_Clicked"/>
             </StackLayout>
         </ScrollView>
