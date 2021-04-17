@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Doctores disponibles"
+             x:Class="Medicape.Views.ChooseDoctor">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Empleado}" HasUnevenRows="True"  IsVisible="True" IsEnabled="True" x:Name="mylist" ItemTapped="Mylist_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout>
+                                <Frame  Margin="5,5,5,5" Padding="0"  CornerRadius="5" HasShadow="True" BackgroundColor="#FFC16D" >
+                                    <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                        <!--<Image Source="doctor" HeightRequest="38" WidthRequest="38" HorizontalOptions="Start"/>-->
+                                        <StackLayout HorizontalOptions="FillAndExpand" Margin="7,0,0,0">
+                                            <StackLayout Orientation="Horizontal" >
+                                                <Label Text="{Binding nombres} " LineBreakMode="HeadTruncation"  FontSize="Medium" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Text="{Binding apellidos}" LineBreakMode="MiddleTruncation"  FontSize="Medium" TextColor="White" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <Image HorizontalOptions="Start" Source="flecha8" HeightRequest="25" WidthRequest="25" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" BackgroundColor="White" >
+                                            <ImageButton HorizontalOptions="End" Source="calendar" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent" Margin="5" Clicked="ImageButton_Clicked"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

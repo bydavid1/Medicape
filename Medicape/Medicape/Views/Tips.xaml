@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Medicape.Views.Tips">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#E5E5E5">
+                <StackLayout BackgroundColor="White" Padding="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="idea" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" />
+                        <Label Text="Sigue estos tips para tener una vida sana" FontSize="Medium"  FontAttributes="Italic" VerticalOptions="CenterAndExpand" TextColor="#008ca5"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <CollectionView x:Name="mylist" >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="White" Padding="0">
+                                    <StackLayout Orientation="Horizontal" Padding="5">
+                                        <Image Source="start_up" HorizontalOptions="StartAndExpand" HeightRequest="80" />
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding titulo}" FontSize="18" HorizontalOptions="StartAndExpand"  FontFamily="{StaticResource BoldFont}"/>
+                                            <Label Text="{Binding descripcion}" FontSize="16" FontFamily="{StaticResource NormalFont}" x:Name="desc" LineBreakMode="WordWrap"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

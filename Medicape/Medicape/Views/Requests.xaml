@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Medicape.Views.Requests">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Image Source="list_time" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" />
+                <Label Text="Solicitudes de citas pendientes" FontSize="Medium"  FontAttributes="Italic" VerticalOptions="CenterAndExpand" TextColor="#008ca5"/>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="mylist" SelectionMode="None" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" Orientation="Horizontal">
+                                    <Image Source="email" WidthRequest="30" HeightRequest="30" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <StackLayout>
+                                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                            <Image Source="calendar" WidthRequest="15" HeightRequest="15"/>
+                                            <Label Text="{Binding fecha}"  TextColor="#008ca5" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Image Source="clock" WidthRequest="20" HeightRequest="20"/>
+                                        <Label Text="{Binding hora}"  TextColor="#008ca5" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Label Text="No se encontraron solicitudes de citas" VerticalOptions="Center" HorizontalOptions="Center" x:Name="message" IsVisible="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

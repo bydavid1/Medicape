@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Medicape.Views.Consults">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#E5E5E5">
+                <StackLayout BackgroundColor="White" Padding="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="list_time" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" />
+                        <Label Text="Acá se muestran todas las consultas registradas" FontSize="Medium"  FontAttributes="Italic" VerticalOptions="CenterAndExpand" TextColor="#008ca5"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Padding="5, 0, 5, 0">
+                    <Frame HorizontalOptions="FillAndExpand"  Padding="0" CornerRadius="5" Margin="0,10,0,0">
+                        <StackLayout>
+                            <StackLayout  BackgroundColor="#008ca5" Orientation="Horizontal" HeightRequest="20">
+                            </StackLayout>
+                            <StackLayout VerticalOptions="FillAndExpand">
+                                <ListView x:Name="mylist" RowHeight="60" SelectionMode="None">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Padding="10,10,10,10">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <StackLayout>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Image Source="calendar" WidthRequest="15" HeightRequest="15"/>
+                                                                <Label Text="{Binding fecha}" FontSize="Small" />
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="Doctor/a: "/>
+                                                                <Label Text="{Binding nom_Doctor}"  FontSize="Medium" FontFamily="{StaticResource BoldFont}" TextColor="#008ca5"/>
+                                                                <Label Text="Consultorio: "/>
+                                                                <Label Text="{Binding num_Consultorio}"  FontSize="Medium"  FontFamily="{StaticResource BoldFont}" TextColor="#008ca5"/>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                                            <Image Source="clock" WidthRequest="15" HeightRequest="15" HorizontalOptions="Center"/>
+                                                            <Label Text="{Binding hora}" FontSize="Small" HorizontalOptions="Center"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                                <Label Text="No se encontraron consultas" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IsVisible="False" x:Name="message"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
